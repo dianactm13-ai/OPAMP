@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<!-- 
+  ╔══════════════════════════════════════════════════════════╗
+  ║  ARCHIVO: index.html  →  PÁGINA PRINCIPAL (Inicio)      ║
+  ║  Este es el primer archivo que abre el navegador.       ║
+  ╚══════════════════════════════════════════════════════════╝
+
+  ¿CÓMO EDITAR ESTE ARCHIVO?
+  ─────────────────────────────────────────────────────────
+  • Ábrelo con cualquier editor de texto (Bloc de Notas,
+    Visual Studio Code, Notepad++, etc.)
+  • Busca el texto que quieres cambiar y cámbialo
+  • Guarda el archivo y recarga el navegador para ver el resultado
+  
+  ESTRUCTURA GENERAL DE HTML:
+  ─────────────────────────────────────────────────────────
+  <etiqueta>  →  abre un elemento
+  </etiqueta> →  cierra un elemento
+  <!-- comentario 
+-->
+
+<!-- Esto le dice al navegador que es un documento HTML moderno -->
+<html lang="es">
+<!-- lang="es" le dice al navegador que el idioma es español -->
+
+<head>
+  <!-- ═══════════════════════════════════════════════════
+       HEAD = Configuración de la página (no visible)
+       Aquí van ajustes técnicos, el título de la pestaña
+       y los enlaces a los archivos de estilos (CSS)
+       ═══════════════════════════════════════════════════ -->
+
+  <!-- Permite usar letras con tilde (á, é, ñ, etc.) -->
+  <meta charset="UTF-8">
+
+  <!-- Hace que la página se vea bien en celulares -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ★ EDITAR: Cambia el texto que aparece en la pestaña del navegador -->
+  <title>OP-AMP | Inicio - Proyecto Electrónica 3</title>
+
+  <!-- Enlaza el archivo de estilos principal (colores, fuentes, etc.) -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<!-- BODY = Todo lo que se ve en la pantalla va aquí -->
+
+  <!-- ═══════════════════════════════════════════════════
+       BARRA DE NAVEGACIÓN (menú superior)
+       ═══════════════════════════════════════════════════ -->
+  <nav class="navbar">
+    <div class="nav-container">
+
+      <!-- ★ EDITAR: Logo / nombre del sitio que aparece a la izquierda -->
+      <div class="nav-logo">⚡ OP-AMP</div>
+      <!-- Puedes cambiar el emoji y el texto: ej. 🔬 Mi Proyecto -->
+
+      <!-- Botón de menú hamburguesa (aparece solo en celular) -->
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <!-- Lista de enlaces del menú -->
+      <ul class="nav-menu">
+        <!-- Cada <li> es un ítem del menú -->
+        <!-- class="nav-link active" → el enlace activo (página actual) se resalta -->
+        <!-- href="..." → a qué archivo lleva ese enlace al hacer clic -->
+
+        <!-- ★ EDITAR: Cambia el texto entre > y </a> para renombrar el menú -->
+        <li><a href="index.html" class="nav-link active">Inicio</a></li>
+        <li><a href="opamp.html" class="nav-link">¿Qué es OP-AMP?</a></li>
+        <li><a href="diseño.html" class="nav-link">Diseño</a></li>
+        <li><a href="protoboard.html" class="nav-link">Protoboard</a></li>
+        <li><a href="pcb.html" class="nav-link">PCB</a></li>
+        <li><a href="resultados.html" class="nav-link">Resultados</a></li>
+        <li><a href="equipo.html" class="nav-link">Equipo</a></li>
+      </ul>
+
+    </div>
+  </nav>
+  <!-- FIN de la barra de navegación -->
+
+
+  <!-- ═══════════════════════════════════════════════════
+       SECCIÓN HERO (portada grande al inicio)
+       Contiene: título, subtítulo, botones e imagen
+       ═══════════════════════════════════════════════════ -->
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <!-- ★ EDITAR: Título principal grande -->
+      <h1>Amplificador Operacional</h1>
+
+      <!-- ★ EDITAR: Texto pequeño debajo del título (color cyan) -->
+      <p class="hero-subtitle">Diseño, simulación e implementación desde cero</p>
+
+      <!-- Botones de acción -->
+      <div class="hero-buttons">
+        <!-- Botón sólido (fondo cyan) -->
+        <!-- href="..." → cambia a qué página va al hacer clic -->
+        <!-- ★ EDITAR: Cambia el texto del botón -->
+        <a href="opamp.html" class="btn btn-primary">Explorar Proyecto</a>
+
+        <!-- Botón con borde (transparente) -->
+        <a href="diseño.html" class="btn btn-outline">Ver Diseño</a>
+      </div>
+
+    </div>
+
+    <!-- Imagen o placeholder a la derecha del título -->
+    <div class="hero-image">
+      <div class="placeholder-box">
+        <!-- ★ EDITAR: Reemplaza este texto con una etiqueta <img> cuando tengas la foto -->
+        <!-- Ejemplo para poner una imagen real:
+             <img src="fotos/circuito.jpg" alt="Foto del circuito" style="width:100%; border-radius:10px;">
+        -->
+            <img src="images/circuito.jpg" alt="Circuito OP-AMP" style="max-width: 95%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);">
+      </div>
+    </div>
+
+  </section>
+  <!-- FIN sección Hero -->
+
+
+  <!-- ═══════════════════════════════════════════════════
+       SECCIÓN DE TARJETAS (Fases del Proyecto)
+       Muestra las 7 secciones del proyecto como tarjetas
+       ═══════════════════════════════════════════════════ -->
+  <section class="overview">
+    <div class="container">
+
+      <!-- ★ EDITAR: Título de esta sección -->
+      <h2 class="section-title">Fases del Proyecto</h2>
+
+      <div class="cards-grid">
+        <!-- Cada bloque <a class="card"> es una tarjeta clickeable -->
+        <!-- href="..." → a qué página va al hacer clic -->
+        <!-- card-icon → el emoji grande arriba de la tarjeta -->
+        <!-- <h3> → título de la tarjeta (en cyan) -->
+        <!-- <p> → descripción de la tarjeta -->
+
+        <!-- ★ EDITAR: Cambia emojis, títulos y descripciones de cada tarjeta -->
+
+        <a href="opamp.html" class="card">
+          <div class="card-icon">⚡</div>
+          <h3>Fundamentos</h3>
+          <p>Aprende qué es un OP-AMP y sus bloques principales</p>
+        </a>
+
+        <a href="diseño.html" class="card">
+          <div class="card-icon">🔧</div>
+          <h3>Diseño Teórico</h3>
+          <p>Cálculos y diseño de cada etapa del circuito</p>
+        </a>
+
+
+        <a href="protoboard.html" class="card">
+          <div class="card-icon">📌</div>
+          <h3>Protoboard</h3>
+          <p>Montaje prototipo para validación rápida</p>
+        </a>
+
+        <a href="pcb.html" class="card">
+          <div class="card-icon">🖨️</div>
+          <h3>PCB Final</h3>
+          <p>Implementación profesional en circuito impreso</p>
+        </a>
+
+        <a href="resultados.html" class="card">
+          <div class="card-icon">📊</div>
+          <h3>Resultados</h3>
+          <p>Mediciones finales y validación de especificaciones</p>
+        </a>
+
+        <a href="equipo.html" class="card">
+          <div class="card-icon">👥</div>
+          <h3>Equipo</h3>
+          <p>Conoce al equipo detrás del proyecto</p>
+        </a>
+
+      </div>
+    </div>
+  </section>
+  <!-- FIN sección tarjetas -->
+
+
+  <!-- ═══════════════════════════════════════════════════
+       SECCIÓN INFO (texto + estadísticas)
+       ═══════════════════════════════════════════════════ -->
+  <section class="info">
+    <div class="container">
+      <div class="info-content">
+
+        <!-- Columna izquierda: texto -->
+        <div class="info-text">
+          <!-- ★ EDITAR: Título de esta sección -->
+          <h2>Proyecto Integral</h2>
+
+          <!-- ★ EDITAR: Párrafos descriptivos del proyecto -->
+          <p>
+            En este proyecto desarrollamos un amplificador operacional completo desde cero. 
+            Pasamos por todas las etapas: diseño teórico, simulación en LTspice, 
+            implementación en protoboard y montaje final en PCB.
+          </p>
+          
+        </div>
+
+        <!-- Columna derecha: cajitas con números -->
+        <div class="info-stats">
+
+          <!-- Cada stat-box es una cajita con número y etiqueta -->
+          <!-- ★ EDITAR: Cambia los números y etiquetas según tu proyecto -->
+
+      
+
+          <div class="stat-box">
+            <div class="stat-number">4</div>
+            <div class="stat-label">Integrantes</div>
+          </div>
+
+          <div class="stat-box">
+            <div class="stat-number">2026</div>
+            <div class="stat-label">Año</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- FIN sección info -->
+
+
+  <!-- ═══════════════════════════════════════════════════
+       PIE DE PÁGINA (Footer)
+       Aparece al final de todas las páginas
+       ═══════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <!-- ★ EDITAR: Texto del footer. &copy; es el símbolo © -->
+      <p>&copy; 2026 Proyecto OP-AMP | Electrónica 3</p>
+      <p class="footer-subtitle">Diseño, Simulación e Implementación</p>
+    </div>
+  </footer>
+  <!-- FIN footer -->
+
+  <!-- Script de JavaScript (maneja el menú en celular) -->
+  <!-- No necesitas tocar este archivo para editar contenido -->
+  <script src="script.js"></script>
+
+</body>
+</html>

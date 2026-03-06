@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!--
+  ╔══════════════════════════════════════════════════════════╗
+  ║  ARCHIVO: resultados.html  →  Página "Resultados"       ║
+  ╚══════════════════════════════════════════════════════════╝
+  
+  CONSEJO: Para agregar una nueva prueba, copia esta sección
+  completa y pégala antes del cierre de .page-content:
+  
+  <section>
+    <h2>Prueba X: Nombre</h2>
+    <div class="image-box">
+      [Tu imagen aquí]
+      <div class="image-box-title">Título de la imagen</div>
+    </div>
+    <p><strong>Resultado:</strong> [escribe el resultado]</p>
+    <p><strong>Especificación:</strong> [escribe la especificación] ✓</p>
+  </section>
+-->
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resultados - Proyecto OP-AMP</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="pages.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">⚡ OP-AMP</div>
+      <ul class="nav-menu">
+        <li><a href="index.html"        class="nav-link">Inicio</a></li>
+        <li><a href="opamp.html"        class="nav-link">¿Qué es OP-AMP?</a></li>
+        <li><a href="diseño.html"       class="nav-link">Diseño</a></li>
+       
+        <li><a href="protoboard.html"   class="nav-link">Protoboard</a></li>
+        <li><a href="pcb.html"          class="nav-link">PCB</a></li>
+        <!-- active → página actual -->
+        <li><a href="resultados.html"   class="nav-link active">Resultados</a></li>
+        <li><a href="equipo.html"       class="nav-link">Equipo</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="page-container">
+
+    <div class="page-header">
+      <!-- ★ EDITAR: título y subtítulo -->
+      <h1>Resultados</h1>
+      <p class="page-subtitle">Mediciones finales del OP-AMP</p>
+    </div>
+
+    <div class="page-content">
+
+      <!-- ══════════ INTRODUCCIÓN ══════════ -->
+      <section>
+        <h2>Prueba en Osciloscopio</h2>
+        <!-- ★ EDITAR: descripción general -->
+        <p>Validación práctica del OP-AMP implementado.</p>
+      </section>
+      
+      <div class="image-box">
+       <img src="images/osciloscopio.jpg" alt="Captura del osciloscopio mostrando la ganancia DC" class="result-image">
+      <div class="image-box-title">Medición de Ganancia</div>
+       </div>
+
+
+
+
+      
+      <!-- ══════════ CONCLUSIÓN ══════════ -->
+      <section>
+        <!-- highlight-section → caja cyan para la conclusión final -->
+        <div class="highlight-section">
+          <!-- ★ EDITAR: conclusión general del proyecto -->
+          <h3>Conclusión</h3>
+          <p>Todas las especificaciones fueron cumplidas satisfactoriamente. El OP-AMP implementado funciona como se esperaba en las simulaciones teóricas.</p>
+        </div>
+      </section>
+
+    </div>
+
+    <div class="page-nav">
+      <a href="pcb.html"    class="nav-btn">← PCB</a>
+      <a href="equipo.html" class="nav-btn next">Equipo →</a>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Proyecto OP-AMP | Electrónica 3</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

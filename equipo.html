@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!--
+  ╔══════════════════════════════════════════════════════════╗
+  ║  ARCHIVO: equipo.html  →  Página "Equipo de Trabajo"    ║
+  ╚══════════════════════════════════════════════════════════╝
+
+  CÓMO EDITAR LOS INTEGRANTES:
+  ─────────────────────────────────────────────────────────
+  Cada <div class="team-card"> es una tarjeta de integrante.
+  Cambia:
+  • team-icon  → el emoji (👩‍💻 👨‍🔬 👩‍🎓 👨‍💼 etc.)
+  • <h3>       → nombre del integrante
+  • team-role  → su rol en el proyecto
+  • team-description → descripción de sus contribuciones
+
+  Para agregar un integrante: copia un team-card completo y pégalo.
+  Para quitar uno: borra el team-card completo.
+-->
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Equipo - Proyecto OP-AMP</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="pages.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">⚡ OP-AMP</div>
+      <ul class="nav-menu">
+        <li><a href="index.html"        class="nav-link">Inicio</a></li>
+        <li><a href="opamp.html"        class="nav-link">¿Qué es OP-AMP?</a></li>
+        <li><a href="diseño.html"       class="nav-link">Diseño</a></li>
+       
+        <li><a href="protoboard.html"   class="nav-link">Protoboard</a></li>
+        <li><a href="pcb.html"          class="nav-link">PCB</a></li>
+        <li><a href="resultados.html"   class="nav-link">Resultados</a></li>
+        <!-- active → página actual -->
+        <li><a href="equipo.html"       class="nav-link active">Equipo</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="page-container">
+
+    <div class="page-header">
+      <!-- ★ EDITAR: título y subtítulo -->
+      <h1>Equipo de Trabajo</h1>
+      <p class="page-subtitle">integrantes del proyecto</p>
+    </div>
+
+    <div class="page-content">
+      <section>
+
+        <!-- ★ EDITAR: texto introductorio del equipo -->
+        <p style="text-align: center; font-size: 1.1rem; margin-bottom: 3rem;">
+          Este proyecto fue desarrollado con dedicación y esfuerzo.
+        </p>
+
+        <!-- team-grid → grilla de tarjetas de integrantes -->
+        <div class="team-grid">
+
+          <!-- ══ INTEGRANTE 1 ══ -->
+          <!-- ★ EDITAR toda la información de cada tarjeta -->
+          <div class="team-card">
+            <!-- team-icon → emoji que representa al integrante -->
+            <!-- ★ EDITAR: cambia el emoji (👩‍💻 👨‍🔬 👩‍🎓 👨‍💼 🧑‍🔧 etc.) -->
+            <div class="team-icon">👤</div>
+
+            <!-- ★ EDITAR: nombre completo del integrante -->
+            <h3>Andrés Anillo</h3>
+
+            <!-- ★ EDITAR: rol o cargo en el proyecto -->
+            <p class="team-role">Design Leader</p>
+
+            <!-- ★ EDITAR: descripción de sus contribuciones -->
+            <p class="team-description">Administra el equipo a través del proceso de diseño,
+manteniendo cada proyecto a tiempo y centrado en los objetivos/fines.</p>
+          </div>
+
+          <!-- ══ INTEGRANTE 2 ══ -->
+          <div class="team-card">
+            <div class="team-icon">👤</div>
+            <h3>Valentina Charris</h3>
+            <p class="team-role">Archivist</p>
+            <p class="team-description">Asegura que el equipo documente el trabajo que se realiza
+durante el semestre</p>
+          </div>
+
+          <!-- ══ INTEGRANTE 3 ══ -->
+          <div class="team-card">
+            <div class="team-icon">👤</div>
+            <h3>David Mora</h3>
+            <p class="team-role">Resource and Facilities Manager</p>
+            <p class="team-description">Se encarga de administrar los recursos/tiempos y los laboratorios/Infraestructura que
+requiere el equipo.</p>
+          </div>
+
+          <!-- ══ INTEGRANTE 4 ══ -->
+          <div class="team-card">
+            <div class="team-icon">👤</div>
+            <h3>Diana Taborda</h3>
+            <p class="team-role">Communications Officer</p>
+            <p class="team-description">Supervisa y gestiona toda la comunicación entre el equipo y el profesor del curso, así
+como con cualquier evaluador externo que pueda ser utilizado para los reviews.</p>
+          </div>
+
+          <!-- Para agregar más integrantes, copia el bloque de arriba aquí ↑ -->
+
+        </div>
+        <!-- FIN team-grid -->
+
+      </section>
+    </div>
+
+    <div class="page-nav">
+      <a href="resultados.html" class="nav-btn">← Resultados</a>
+      <a href="index.html"      class="nav-btn next">Inicio →</a>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Proyecto OP-AMP | Electrónica 3</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,460 @@
+/*
+╔══════════════════════════════════════════════════════════════╗
+║  ARCHIVO: styles.css  →  ESTILOS PRINCIPALES                ║
+║  Controla colores, tamaños, fuentes y diseño de TODAS       ║
+║  las páginas. Es el archivo más importante para cambiar      ║
+║  la apariencia del sitio.                                   ║
+╚══════════════════════════════════════════════════════════════╝
+
+¿CÓMO FUNCIONA EL CSS?
+────────────────────────────────────────────────────────────────
+  .nombre-clase { propiedad: valor; }
+  
+  Ejemplo:
+  .navbar { background: blue; }  →  pone fondo azul a la barra
+
+¿CÓMO EDITAR COLORES?
+────────────────────────────────────────────────────────────────
+  Los colores se escriben así:
+  • Por nombre:  red, blue, white, black, green
+  • En HEX:      #FF0000 (rojo), #00FF00 (verde), #0000FF (azul)
+  • En RGB:      rgb(255, 0, 0)
+  
+  La sección más importante está abajo: las VARIABLES DE COLOR
+  (están dentro de :root { ... })
+  Cambia solo esos valores para cambiar toda la paleta del sitio.
+*/
+
+/* ─────────────────────────────────────────────────────────────
+   RESET: borra los márgenes y rellenos por defecto del navegador
+   No necesitas tocar esto
+   ───────────────────────────────────────────────────────────── */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;  /* hace que los tamaños sean más predecibles */
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   ★★★ VARIABLES DE COLOR (aquí cambias toda la paleta) ★★★
+   
+   :root es como un diccionario de colores.
+   Define el color una vez y lo usa en todo el sitio.
+   
+   ¿CÓMO CAMBIAR LOS COLORES?
+   Solo cambia el valor (el código hexadecimal) de cada variable.
+   Por ejemplo: --highlight: #00d4ff;  →  --highlight: #ff6600;
+   Y automáticamente cambia en toda la página.
+   ───────────────────────────────────────────────────────────── */
+:root {
+    --primary:    #020c1b;  /* ★ Color de fondo más oscuro (esquina superior izq) */
+    --secondary:  #0a192f;  /* ★ Color de fondo secundario (esquina inferior der) */
+    --accent:     #0d2d4f;  /* ★ Color de fondo de tarjetas y cajas */
+    --highlight:  #00d4ff;  /* ★ Color principal de acento (cyan/azul brillante).
+                                  Úsalo para cambiar el color de botones, bordes,
+                                  títulos de tarjetas, subrayados activos, etc. */
+    --light:      #f0f8ff;  /* Color claro (poco usado actualmente) */
+    --text-dark:  #0a192f;  /* Color de texto en fondos claros */
+    --text-light: #ccd6f6;  /* ★ Color del texto principal (sobre fondo oscuro) */
+    --border:     #1e3a5f;  /* Color de bordes sutiles */
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   SCROLL SUAVE: al hacer clic en un enlace, la página
+   se desplaza suavemente en vez de saltar
+   ───────────────────────────────────────────────────────────── */
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   CUERPO DE LA PÁGINA (fondo general)
+   ───────────────────────────────────────────────────────────── */
+body {
+    /* ★ EDITAR: fuente del texto. Puedes cambiar 'Segoe UI' por otra fuente */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    /* Fondo degradado diagonal de --primary a --secondary */
+    /* ★ EDITAR: cambia 135deg para cambiar la dirección del degradado */
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+
+    color: var(--text-light);  /* color del texto general */
+    line-height: 1.6;          /* espaciado entre líneas (1.6 = cómodo para leer) */
+    min-height: 100vh;         /* la página ocupa al menos toda la pantalla */
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   BARRA DE NAVEGACIÓN (menú superior)
+   ═══════════════════════════════════════════════════════════ */
+
+.navbar {
+    /* ★ EDITAR: color de fondo de la barra (rgba = color con transparencia) */
+    /* rgba(26, 26, 46, 0.95)  →  el 0.95 es 95% opaco */
+    background: rgba(26, 26, 46, 0.95);
+    
+    backdrop-filter: blur(10px); /* efecto vidrio esmerilado (borroso) */
+    padding: 1rem 0;             /* espaciado arriba y abajo */
+    position: sticky;            /* se queda fija arriba al hacer scroll */
+    top: 0;                      /* pegada al tope de la pantalla */
+    z-index: 1000;               /* encima de todo lo demás */
+
+    /* ★ EDITAR: cambia --highlight por otro color si quieres otra línea inferior */
+    border-bottom: 2px solid var(--highlight);
+}
+
+.nav-container {
+    max-width: 1200px;    /* ancho máximo del contenido */
+    margin: 0 auto;       /* centrado horizontalmente */
+    padding: 0 2rem;      /* espacio a los lados */
+    display: flex;        /* los elementos van en fila */
+    justify-content: space-between;  /* logo a la izq, menú a la der */
+    align-items: center;  /* centrados verticalmente */
+}
+
+.nav-logo {
+    /* ★ EDITAR: tamaño y color del logo/nombre a la izquierda */
+    font-size: 1.8rem;
+    font-weight: 700;     /* negrita */
+    color: var(--highlight);
+}
+
+.nav-menu {
+    display: flex;        /* los ítems del menú van en fila */
+    list-style: none;     /* quita los puntos de lista */
+    gap: 2rem;            /* espacio entre cada ítem */
+    flex-wrap: wrap;      /* si no caben, pasan a la siguiente línea */
+}
+
+.nav-link {
+    color: var(--text-light);
+    text-decoration: none;  /* quita el subrayado de los enlaces */
+    font-weight: 500;
+    position: relative;     /* necesario para el subrayado animado */
+    transition: color 0.3s ease;  /* el color cambia suavemente al pasar el mouse */
+}
+
+/* Línea subrayada animada debajo de cada enlace */
+.nav-link::after {
+    content: '';          /* elemento vacío (es solo visual) */
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;             /* empieza con ancho 0 (invisible) */
+    height: 2px;
+    background: var(--highlight);
+    transition: width 0.3s ease;  /* se anima el ancho */
+}
+
+/* Al pasar el mouse O si es el enlace activo → la línea aparece completa */
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;  /* la línea se expande al 100% */
+}
+
+/* Color del enlace al pasar el mouse o si está activo */
+.nav-link:hover,
+.nav-link.active {
+    color: var(--highlight);
+}
+
+/* Botón ☰ hamburguesa (solo visible en celular) */
+.hamburger {
+    display: none;         /* oculto en pantallas grandes */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--highlight);
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   SECCIÓN HERO (portada grande con título e imagen)
+   ═══════════════════════════════════════════════════════════ */
+
+.hero {
+    max-width: 1200px;
+    margin: 0 auto;
+    /* ★ EDITAR: padding = espacio interno (arriba/abajo  izq/der) */
+    padding: 4rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;  /* dos columnas iguales */
+    gap: 3rem;              /* espacio entre las dos columnas */
+    align-items: center;    /* centradas verticalmente */
+}
+
+.hero-content h1 {
+    /* ★ EDITAR: tamaño del título principal */
+    font-size: 3.5rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    line-height: 1.2;  /* separación entre líneas del título */
+}
+
+.hero-subtitle {
+    /* ★ EDITAR: tamaño y color del subtítulo */
+    font-size: 1.3rem;
+    color: var(--highlight);
+    margin-bottom: 2rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   BOTONES (btn = botón base, btn-primary = sólido, btn-outline = borde)
+   ───────────────────────────────────────────────────────────── */
+.btn {
+    padding: 0.8rem 2rem;   /* ★ EDITAR: tamaño del botón (alto izq/der) */
+    border-radius: 5px;      /* esquinas redondeadas */
+    text-decoration: none;   /* quita subrayado */
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+}
+
+/* Botón sólido (fondo cyan) */
+.btn-primary {
+    background: var(--highlight);  /* ★ fondo del botón principal */
+    color: white;                  /* ★ texto del botón principal */
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);   /* se mueve 3px hacia arriba al pasar el mouse */
+    box-shadow: 0 10px 25px rgba(0, 212, 255, 0.35);  /* sombra cyan */
+}
+
+/* Botón con borde (sin fondo) */
+.btn-outline {
+    border: 2px solid var(--highlight);
+    color: var(--highlight);
+    background: transparent;
+}
+
+.btn-outline:hover {
+    background: var(--highlight);  /* al pasar el mouse se rellena */
+    color: white;
+}
+
+
+/* Caja placeholder (donde va la imagen en el hero) */
+.placeholder-box {
+    background: rgba(0, 212, 255, 0.07);  /* fondo muy sutil */
+    border: 2px dashed var(--highlight);   /* borde punteado */
+    padding: 4rem;
+    border-radius: 10px;
+    text-align: center;
+    color: var(--text-light);
+    height: 300px;          /* ★ EDITAR: alto de la caja de imagen */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   SECCIÓN OVERVIEW (fondo de las tarjetas del menú)
+   ═══════════════════════════════════════════════════════════ */
+
+.overview {
+    /* Fondo semitransparente (el 0.5 es 50% opaco) */
+    background: rgba(22, 33, 62, 0.5);
+    padding: 4rem 2rem;  /* ★ EDITAR: espacio interno */
+    margin: 3rem 0;      /* espacio exterior arriba y abajo */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    /* ★ EDITAR: tamaño del título de sección */
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--text-light);
+}
+
+/* Grilla de tarjetas (se adapta automáticamente al ancho) */
+.cards-grid {
+    display: grid;
+    /* auto-fit = cuantas quepan; minmax(280px, 1fr) = mínimo 280px cada una */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;  /* ★ EDITAR: espacio entre tarjetas */
+}
+
+/* Tarjeta individual */
+.card {
+    background: linear-gradient(135deg, rgba(15, 52, 96, 0.7), rgba(22, 33, 62, 0.7));
+    border: 2px solid var(--accent);
+    padding: 2rem;
+    border-radius: 8px;          /* esquinas redondeadas */
+    transition: all 0.3s ease;   /* animación suave al hover */
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Efecto al pasar el mouse sobre una tarjeta */
+.card:hover {
+    border-color: var(--highlight);
+    transform: translateY(-10px);  /* sube 10px */
+    box-shadow: 0 15px 35px rgba(0, 212, 255, 0.2);  /* sombra cyan */
+}
+
+.card-icon {
+    font-size: 2.5rem;  /* ★ EDITAR: tamaño del emoji de la tarjeta */
+    margin-bottom: 1rem;
+}
+
+.card h3 {
+    color: var(--highlight);  /* ★ EDITAR: color del título de tarjeta */
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    color: var(--text-light);
+    flex-grow: 1;  /* ocupa el espacio disponible */
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   SECCIÓN INFO (texto + cajitas de estadísticas)
+   ═══════════════════════════════════════════════════════════ */
+
+.info {
+    padding: 4rem 2rem;
+}
+
+.info-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;  /* texto más ancho que estadísticas */
+    gap: 3rem;
+    align-items: center;
+}
+
+.info-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-light);
+}
+
+.info-text p {
+    margin-bottom: 1rem;
+    color: var(--text-light);
+    text-align: justify;  /* texto justificado (como en un libro) */
+}
+
+.info-stats {
+    display: flex;
+    flex-direction: column;  /* las cajitas van una debajo de la otra */
+    gap: 2rem;
+}
+
+/* Cajita de estadística (número + etiqueta) */
+.stat-box {
+    background: linear-gradient(135deg, var(--accent), var(--secondary));
+    padding: 2rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--highlight);  /* barra cyan a la izquierda */
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2.5rem;  /* ★ EDITAR: tamaño del número grande */
+    font-weight: 700;
+    color: var(--highlight);
+}
+
+.stat-label {
+    color: var(--text-light);
+    margin-top: 0.5rem;
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   FOOTER (pie de página)
+   ═══════════════════════════════════════════════════════════ */
+
+.footer {
+    background: rgba(26, 26, 46, 0.95);
+    border-top: 2px solid var(--highlight);  /* línea cyan arriba */
+    padding: 2rem;
+    text-align: center;
+    color: var(--text-light);
+    margin-top: 4rem;
+}
+
+.footer-subtitle {
+    font-size: 0.9rem;
+    color: var(--highlight);
+    margin-top: 0.5rem;
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE (cómo se ve en celulares y pantallas pequeñas)
+   
+   @media (max-width: 768px) significa:
+   "aplicar estos estilos SOLO cuando la pantalla tenga 768px o menos"
+   ═══════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+    /* El hero pasa de 2 columnas a 1 columna */
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 2rem;
+    }
+
+    /* El título se hace más pequeño */
+    .hero-content h1 {
+        font-size: 2.2rem;  /* ★ EDITAR: tamaño del h1 en celular */
+    }
+
+    /* El menú de navegación se reduce */
+    .nav-menu {
+        gap: 1rem;
+        font-size: 0.9rem;
+    }
+
+    /* Las tarjetas pasan a una sola columna */
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* La sección info pasa a una sola columna */
+    .info-content {
+        grid-template-columns: 1fr;
+    }
+
+    /* El botón hamburguesa aparece en celular */
+    .hamburger {
+        display: flex;
+    }
+
+    /* El menú de navegación se oculta (el JS lo muestra al clic) */
+    .nav-menu {
+        display: none;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+}

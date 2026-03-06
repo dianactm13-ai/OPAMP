@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<!--
+  ╔══════════════════════════════════════════════════════════╗
+  ║  ARCHIVO: protoboard.html  →  Página "Protoboard"       ║
+  ╚══════════════════════════════════════════════════════════╝
+-->
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- ★ EDITAR: título en la pestaña -->
+  <title>Montaje Protoboard - Proyecto OP-AMP</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="pages.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">⚡ OP-AMP</div>
+      <ul class="nav-menu">
+        <li><a href="index.html"        class="nav-link">Inicio</a></li>
+        <li><a href="opamp.html"        class="nav-link">¿Qué es OP-AMP?</a></li>
+        <li><a href="diseño.html"       class="nav-link">Diseño</a></li>
+        <!-- active → página actual -->
+        <li><a href="protoboard.html"   class="nav-link active">Protoboard</a></li>
+        <li><a href="pcb.html"          class="nav-link">PCB</a></li>
+        <li><a href="resultados.html"   class="nav-link">Resultados</a></li>
+        <li><a href="equipo.html"       class="nav-link">Equipo</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="page-container">
+
+    <div class="page-header">
+      <!-- ★ EDITAR: título y subtítulo de la página -->
+      <h1>Montaje en Protoboard</h1>
+      
+    </div>
+
+    <div class="page-content">
+
+      <!-- ══════════ SECCIÓN: Proceso ══════════ -->
+      <section>
+        <h2>Proceso de Montaje</h2>
+        <!-- ★ EDITAR: descripción del proceso -->
+        <p>El protoboard permite validar el diseño antes de la PCB.</p>
+        <ul class="list-items">
+          <li>Identificación correcta de terminales en los transistores</li>
+          <li>Verificación de continuidad con multímetro</li>
+        
+        </ul>
+      </section>
+
+      
+
+
+<!-- ══════════ SECCIÓN: Fuente de Corriente ══════════ -->
+<section>
+  <h2>Fuente de Corriente, Par Diferencial y Espejo de Corriente</h2>
+
+  <div class="images-grid">
+    <div class="image-box">
+      <img src="images/proto1.jpg" alt="Montaje en protoboard" style="width:100%; border-radius:10px;">
+      <div class="image-box-title">Montaje en Protoboard</div>
+    </div>
+
+    <div class="image-box">
+      <img src="images/os1.jpg" alt="Resultado en osciloscopio" style="width:100%; border-radius:10px;">
+      <div class="image-box-title">Resultado en Osciloscopio</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════ SECCIÓN: Etapa de Ganancia ══════════ -->
+<section>
+  <h2>Etapa de Ganancia (Etapa con Degeneración)</h2>
+
+  <div class="images-grid">
+    <div class="image-box">
+      <img src="images/proto2.jpg" alt="Montaje en protoboard" style="width:100%; border-radius:10px;">
+      <div class="image-box-title">Montaje en Protoboard</div>
+    </div>
+
+    <div class="image-box">
+      <img src="images/os2.jpg" alt="Resultado en osciloscopio" style="width:100%; border-radius:10px;">
+      <div class="image-box-title">Resultado en Osciloscopio</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════ SECCIÓN: Carga Activa ══════════ -->
+<section>
+  <h2>Carga Activa y Segunda Etapa de Ganancia</h2>
+
+  <div class="images-grid">
+    <div class="image-box">
+      <img src="images/proto3.jpg" alt="Montaje en protoboard" style="width:100%; border-radius:10px;">
+      <div class="image-box-title">Montaje en Protoboard</div>
+    </div>
+
+    <div class="image-box">
+      <img src="images/os3.jpg" alt="Resultado en osciloscopio" style="width:100%; border-radius:10px;">
+      <div class="image-box-title">Resultado en Osciloscopio</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════ SECCIÓN: Compensación ══════════ -->
+<section>
+  <h2>Compensación</h2>
+
+  <div class="images-grid">
+    <div class="image-box">
+      <img src="images/proto4.jpg" alt="Montaje en protoboard" style="width:100%; border-radius:10px;">
+      <div class="image-box-title">Montaje en Protoboard</div>
+    </div>
+
+    <div class="image-box">
+      <img src="images/os4.jpg" alt="Resultado en osciloscopio" style="width:100%; border-radius:10px;">
+      <div class="image-box-title">Resultado en Osciloscopio</div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- ══════════ SECCIÓN: Pruebas ══════════ -->
+      <section>
+        <h2>Pruebas Iniciales</h2>
+        <!-- highlight-section → caja cyan para resultados positivos -->
+        <!-- ★ EDITAR: lista de pruebas realizadas -->
+        <div class="highlight-section">
+          <ul class="list-items">
+            <li>✓ Comparación entre valores simulados y medidos</li>
+  
+            <li>✓ Observación de la señal amplificada en el osciloscopio</li>
+            <li>✓ Confirmación de estabilidad del circuito</li>
+          </ul>
+        </div>
+      </section>
+
+    </div>
+
+    <div class="page-nav">
+      <a href="diseño.html" class="nav-btn">← Simulaciones</a>
+      <a href="pcb.html"          class="nav-btn next">PCB →</a>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Proyecto OP-AMP | Electrónica 3</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

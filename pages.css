@@ -1,0 +1,382 @@
+/*
+╔══════════════════════════════════════════════════════════════╗
+║  ARCHIVO: pages.css  →  ESTILOS DE PÁGINAS INTERNAS        ║
+║  Este archivo aplica a todas las páginas excepto index.html ║
+║  (opamp, diseño, simulaciones, protoboard, pcb,             ║
+║   resultados, equipo)                                       ║
+╚══════════════════════════════════════════════════════════════╝
+
+IMPORTANTE: Este archivo se usa JUNTO con styles.css.
+Los colores vienen de las variables definidas en styles.css (:root).
+Si quieres cambiar colores, hazlo en styles.css.
+*/
+
+
+/* ─────────────────────────────────────────────────────────────
+   CONTENEDOR PRINCIPAL de cada página interna
+   Limita el ancho del contenido y lo centra
+   ───────────────────────────────────────────────────────────── */
+.page-container {
+    max-width: 1000px;  /* ★ EDITAR: ancho máximo del contenido de la página */
+    margin: 0 auto;     /* centrado horizontal */
+    padding: 2rem;      /* espacio alrededor del contenido */
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   ENCABEZADO de cada página (título grande + subtítulo)
+   ───────────────────────────────────────────────────────────── */
+.page-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    padding: 3rem 0;
+}
+
+.page-header h1 {
+    /* ★ EDITAR: tamaño del título de cada página interna */
+    font-size: 3rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+/* Subtítulo en cyan debajo del título */
+.page-subtitle {
+    font-size: 1.3rem;
+    color: var(--highlight);
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   CAJA DE CONTENIDO (el recuadro gris azulado con el texto)
+   ───────────────────────────────────────────────────────────── */
+.page-content {
+    /* Fondo semitransparente (0.6 = 60% opaco) */
+    background: rgba(22, 33, 62, 0.6);
+    border-radius: 10px;   /* esquinas redondeadas */
+    padding: 3rem;         /* ★ EDITAR: espacio interno del recuadro */
+    margin-bottom: 3rem;
+}
+
+.page-content section {
+    margin-bottom: 3rem;  /* espacio entre secciones */
+}
+
+/* Título de sección H2 (con línea inferior cyan) */
+.page-content h2 {
+    font-size: 2rem;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--highlight);  /* ★ línea decorativa abajo */
+}
+
+/* Subtítulo H3 (en cyan) */
+.page-content h3 {
+    font-size: 1.3rem;
+    color: var(--highlight);  /* ★ EDITAR: color de los h3 */
+    margin: 1.5rem 0 1rem 0;
+}
+
+/* Subtítulo H4 */
+.page-content h4 {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin: 1rem 0 0.5rem 0;
+}
+
+/* Párrafos de texto */
+.page-content p {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    line-height: 1.8;     /* espaciado entre líneas */
+    text-align: justify;  /* texto justificado */
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   LISTAS con flecha ▸ (en vez de puntos normales)
+   ───────────────────────────────────────────────────────────── */
+.list-items {
+    list-style: none;   /* quita los puntos/números predeterminados */
+    margin: 1.5rem 0;
+}
+
+.list-items li {
+    padding: 0.8rem 0;
+    padding-left: 2rem;  /* espacio para la flecha ▸ */
+    color: var(--text-light);
+    position: relative;
+}
+
+/* La flecha ▸ antes de cada ítem de lista */
+.list-items li::before {
+    content: '▸';        /* ★ EDITAR: cambia el carácter por otro símbolo */
+    position: absolute;
+    left: 0;
+    color: var(--highlight);  /* ★ color de la flecha */
+    font-weight: bold;
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   TARJETA DE BLOQUE (block-card)
+   Caja con borde izquierdo cyan, para resaltar información
+   Aparece en opamp.html y diseño.html
+   ───────────────────────────────────────────────────────────── */
+.block-card {
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.07), rgba(13, 45, 79, 0.2));
+    border-left: 4px solid var(--highlight);  /* ★ barra cyan a la izquierda */
+    padding: 1.5rem;
+    margin: 2rem 0;
+    border-radius: 5px;
+}
+
+.block-card h3 {
+    margin-top: 0;
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   SECCIÓN RESALTADA (highlight-section)
+   Caja de fondo cyan para información muy importante
+   ───────────────────────────────────────────────────────────── */
+.highlight-section {
+    /* Degradado de cyan oscuro a cyan brillante */
+    background: linear-gradient(135deg, #0099bb, rgba(0, 212, 255, 0.85));
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+    color: white;
+}
+
+.highlight-section h4 {
+    color: white;
+    margin-top: 0;
+}
+
+.highlight-section p {
+    color: rgba(255, 255, 255, 0.95);  /* blanco casi puro */
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   PLACEHOLDER DE IMAGEN (imagen-placeholder)
+   Caja punteada que muestra dónde irá una imagen
+   ★ CÓMO REEMPLAZARLA CON UNA IMAGEN REAL:
+   
+   En el HTML, busca el div con class="image-placeholder" y reemplaza
+   todo el div por:
+   <img src="fotos/tu-imagen.jpg" alt="descripción" style="width:100%; border-radius:8px;">
+   ───────────────────────────────────────────────────────────── */
+.image-placeholder {
+    background: rgba(0, 212, 255, 0.07);
+    border: 2px dashed var(--highlight);  /* borde punteado */
+    padding: 3rem;
+    border-radius: 8px;
+    text-align: center;
+    color: var(--text-light);
+    margin: 2rem 0;
+    min-height: 200px;   /* ★ EDITAR: alto mínimo del placeholder */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   TABLA DE DATOS
+   ───────────────────────────────────────────────────────────── */
+.table-responsive {
+    overflow-x: auto;  /* scroll horizontal en pantallas pequeñas */
+    margin: 2rem 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(22, 33, 62, 0.5);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* Encabezado de tabla (fila de títulos) */
+th {
+    background: var(--highlight);  /* ★ fondo de los encabezados */
+    color: white;
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+}
+
+/* Celdas de datos */
+td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--accent);
+    color: var(--text-light);
+}
+
+/* Color de fila al pasar el mouse */
+tr:hover {
+    background: rgba(0, 212, 255, 0.05);
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   BOTONES DE NAVEGACIÓN ENTRE PÁGINAS (← anterior | siguiente →)
+   ───────────────────────────────────────────────────────────── */
+.page-nav {
+    display: flex;
+    justify-content: space-between;  /* uno a la izq, otro a la der */
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.nav-btn {
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, var(--accent), var(--secondary));
+    color: var(--text-light);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    border: 2px solid var(--highlight);
+    font-weight: 600;
+}
+
+.nav-btn:hover {
+    background: var(--highlight);   /* fondo cyan al pasar el mouse */
+    transform: translateY(-3px);    /* sube levemente */
+    box-shadow: 0 10px 25px rgba(0, 212, 255, 0.3);
+}
+
+/* Clase extra para empujar el botón "siguiente" a la derecha */
+.nav-btn.next {
+    margin-left: auto;
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   GRILLA DE IMÁGENES (para mostrar varias fotos en fila)
+   Usada en simulaciones.html, protoboard.html, pcb.html, resultados.html
+   ───────────────────────────────────────────────────────────── */
+.images-grid {
+    display: grid;
+    /* auto-fit = cuantas quepan; mínimo 300px cada una */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+/* Caja individual de imagen */
+.image-box {
+    background: rgba(0, 212, 255, 0.07);
+    border: 2px dashed var(--highlight);  /* borde punteado */
+    padding: 3rem;
+    border-radius: 8px;
+    text-align: center;
+    color: var(--text-light);
+    min-height: 250px;   /* ★ EDITAR: alto mínimo de cada caja de imagen */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* Texto del título debajo de cada imagen */
+.image-box-title {
+    color: var(--highlight);
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   GRILLA DEL EQUIPO (tarjetas de los integrantes)
+   Usada en equipo.html
+   ───────────────────────────────────────────────────────────── */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Tarjeta de cada integrante */
+.team-card {
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.07), rgba(13, 45, 79, 0.2));
+    border: 2px solid var(--accent);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* Efecto al pasar el mouse sobre una tarjeta de equipo */
+.team-card:hover {
+    border-color: var(--highlight);
+    transform: translateY(-10px);  /* sube 10px */
+    box-shadow: 0 15px 35px rgba(0, 212, 255, 0.2);
+}
+
+/* Emoji/ícono grande del integrante */
+.team-icon {
+    font-size: 3rem;  /* ★ EDITAR: tamaño del emoji del integrante */
+    margin-bottom: 1rem;
+}
+
+.team-card h3 {
+    color: var(--highlight);  /* nombre en cyan */
+    margin: 0 0 0.5rem 0;
+}
+
+.team-role {
+    color: var(--highlight);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.team-description {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE para páginas internas (celulares)
+   ═══════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+    .page-container {
+        padding: 1rem;
+    }
+
+    .page-content {
+        padding: 1.5rem;  /* menos padding en celular */
+    }
+
+    .page-header h1 {
+        font-size: 2rem;  /* título más pequeño en celular */
+    }
+
+    /* Los botones de nav pasan a una columna */
+    .page-nav {
+        flex-direction: column;
+    }
+
+    .nav-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-btn.next {
+        margin-left: 0;
+    }
+
+    /* Las grillas pasan a una sola columna */
+    .images-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+}

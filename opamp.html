@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!--
+  ╔══════════════════════════════════════════════════════════╗
+  ║  ARCHIVO: opamp.html  →  Página "¿Qué es OP-AMP?"       ║
+  ╚══════════════════════════════════════════════════════════╝
+  
+  ESTRUCTURA DE TODAS LAS PÁGINAS INTERNAS:
+  ─────────────────────────────────────────
+  1. <head>      → Configuración (título, estilos)
+  2. <nav>       → Barra de navegación (igual en todas)
+  3. <main>      → Contenido principal de esta página
+     ├── .page-header   → Título + subtítulo
+     └── .page-content  → Secciones con el contenido
+  4. .page-nav   → Botones ← anterior / siguiente →
+  5. <footer>    → Pie de página
+  6. <script>    → JavaScript
+-->
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ★ EDITAR: título en la pestaña del navegador -->
+  <title>¿Qué es OP-AMP? - Proyecto OP-AMP</title>
+
+  <!-- Esta página usa DOS archivos CSS:
+       styles.css  → estilos generales (navbar, footer, colores)
+       pages.css   → estilos de páginas internas (block-card, list-items, etc.) -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="pages.css">
+</head>
+<body>
+
+  <!-- ─── BARRA DE NAVEGACIÓN ─── -->
+  <!-- Es igual en todas las páginas. Para editar el menú,
+       recuerda cambiar TODOS los archivos HTML -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">⚡ OP-AMP</div>
+      <ul class="nav-menu">
+        <li><a href="index.html"       class="nav-link">Inicio</a></li>
+        <!-- class="nav-link active" → resalta este enlace (página actual) -->
+        <li><a href="opamp.html"       class="nav-link active">¿Qué es OP-AMP?</a></li>
+        <li><a href="diseño.html"      class="nav-link">Diseño</a></li>
+        <li><a href="protoboard.html"  class="nav-link">Protoboard</a></li>
+        <li><a href="pcb.html"         class="nav-link">PCB</a></li>
+        <li><a href="resultados.html"  class="nav-link">Resultados</a></li>
+        <li><a href="equipo.html"      class="nav-link">Equipo</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ─── CONTENIDO PRINCIPAL ─── -->
+  <main class="page-container">
+
+    <!-- Encabezado de la página (título grande + subtítulo cyan) -->
+    <div class="page-header">
+      <!-- ★ EDITAR: título principal de esta página -->
+      <h1>¿Qué es un OP-AMP?</h1>
+      <!-- ★ EDITAR: subtítulo en cyan debajo del título -->
+      <p class="page-subtitle">Definición, importancia y bloques funcionales</p>
+    </div>
+
+    <!-- Caja de contenido (fondo semitransparente) -->
+    <div class="page-content">
+
+      <!-- ══════════ SECCIÓN 1 ══════════ -->
+      <section>
+        <!-- h2 → título con línea cyan abajo -->
+        <!-- ★ EDITAR: nombre de la sección -->
+        <h2>Definición</h2>
+
+        <!-- ★ EDITAR: párrafos de texto -->
+        <p>
+          Un amplificador operacional (OP-AMP) es un dispositivo electrónico diseñado para amplificar la diferencia de voltaje entre dos entradas y entregar una señal de salida mucho mayor. Es uno de los componentes más importantes en la electrónica analógica porque permite realizar múltiples funciones como amplificar señales, filtrar ruido, comparar voltajes y hasta realizar operaciones matemáticas.
+
+        <p>
+      
+      </section>
+
+      <!-- ══════════ SECCIÓN 2 ══════════ -->
+      <section>
+        <h2>Importancia </h2>
+
+        <!-- Lista con flechas ▸ (estilo definido en pages.css) -->
+        <!-- ★ EDITAR: agrega, quita o cambia los <li> según necesites -->
+        <p>
+          Una de las principales razones de su importancia es su alta ganancia y precisión. Gracias a estas características, el OP-AMP puede detectar y amplificar señales muy pequeñas, lo cual es esencial en sistemas de instrumentación, sensores y procesamiento de señales. Esto permite trabajar con señales débiles provenientes, por ejemplo, de sensores de temperatura, presión o audio.
+        </p>
+      </section>
+
+      <!-- ══════════ SECCIÓN 3 ══════════ -->
+      <section>
+        <h2>Bloques Principales</h2>
+
+        <!-- block-card → caja con borde izquierdo cyan (estilo en pages.css) -->
+        <!-- ★ EDITAR: puedes copiar y pegar este bloque para agregar más tarjetas -->
+        <div class="block-card">
+          <h3>1️⃣ Etapa Diferencial</h3>
+          <p>
+           La etapa diferencial es el primer bloque interno de un amplificador operacional y es considerada el corazón del circuito. Su función principal es comparar las dos señales de entrada —la no inversora (+) y la inversora (−)— y amplificar únicamente la diferencia entre ellas.
+          </p>
+          
+        </div>
+
+        <div class="block-card">
+          <h3>2️⃣ Etapa de Ganancia</h3>
+          <p>
+            La etapa de ganancia es el bloque encargado de proporcionar la mayor amplificación de voltaje dentro del amplificador operacional. Después de que la etapa diferencial detecta y convierte la diferencia de entrada en una señal de corriente, la etapa de ganancia toma esa señal y la amplifica significativamente.
+          </p>
+         
+        </div>
+
+        <div class="block-card">
+          <h3>3️⃣ Etapa de Salida</h3>
+          <p>
+           La etapa de salida es el bloque final del amplificador operacional y su función principal es entregar la señal amplificada al circuito externo.
+          </p>
+          
+        </div>
+
+
+        <div class="block-card">
+          <h3>Esquema de compensación</h3>
+          <p>
+            Los esquemas de compensación son mecanismos internos del amplificador operacional diseñados para garantizar la estabilidad del circuito, especialmente cuando se utiliza con realimentación negativa.
+          </p>
+         
+        </div>
+
+
+        <!-- highlight-section → caja de fondo cyan para info muy importante -->
+        <!-- ★ EDITAR: cambia el contenido de esta caja resaltada -->
+        <div class="highlight-section">
+          <h4>📌 Circuitos de Polarización</h4>
+          <p>
+            Los circuitos de polarización son los bloques encargados de establecer y mantener los puntos de operación adecuados de todos los transistores dentro del amplificador operacional. Aunque no participan directamente en la amplificación de la señal, son esenciales para que el circuito funcione correctamente y de manera estable.
+          </p>
+        </div>
+
+      </section>
+    </div>
+    <!-- FIN .page-content -->
+
+    <!-- Botones de navegación entre páginas -->
+    <!-- ★ EDITAR: cambia href y texto de los botones -->
+    <div class="page-nav">
+      <a href="index.html"  class="nav-btn">← Inicio</a>    <!-- botón izquierdo -->
+      <a href="diseño.html" class="nav-btn next">Diseño →</a> <!-- botón derecho -->
+    </div>
+
+  </main>
+
+  <!-- Pie de página -->
+  <footer class="footer">
+    <div class="container">
+      <!-- ★ EDITAR: texto del footer -->
+      <p>&copy; 2026 Proyecto OP-AMP | Electrónica 3</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<!--
+  ╔══════════════════════════════════════════════════════════╗
+  ║  ARCHIVO: diseño.html  →  Página "Diseño del OP-AMP"    ║
+  ╚══════════════════════════════════════════════════════════╝
+  
+  CONSEJO: Para agregar una nueva sección, copia este bloque
+  y pégalo dentro de .page-content:
+  
+  <section>
+    <h2>Nombre de la Sección</h2>
+    <p>Tu texto aquí...</p>
+  </section>
+-->
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- ★ EDITAR: título en la pestaña -->
+  <title>Diseño del OP-AMP - Proyecto OP-AMP</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="pages.css">
+</head>
+<body>
+
+  <!-- ─── BARRA DE NAVEGACIÓN (igual en todas las páginas) ─── -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">⚡ OP-AMP</div>
+      <ul class="nav-menu">
+        <li><a href="index.html"        class="nav-link">Inicio</a></li>
+        <li><a href="opamp.html"        class="nav-link">¿Qué es OP-AMP?</a></li>
+        <!-- active → enlace resaltado (página actual) -->
+        <li><a href="diseño.html"       class="nav-link active">Diseño</a></li>
+   
+        <li><a href="protoboard.html"   class="nav-link">Protoboard</a></li>
+        <li><a href="pcb.html"          class="nav-link">PCB</a></li>
+        <li><a href="resultados.html"   class="nav-link">Resultados</a></li>
+        <li><a href="equipo.html"       class="nav-link">Equipo</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="page-container">
+
+    <!-- ─── ENCABEZADO ─── -->
+    <div class="page-header">
+      <!-- ★ EDITAR: título y subtítulo de la página -->
+      <h1>Diseño del OP-AMP</h1>
+      <p class="page-subtitle">Cálculos y desarrollo paso a paso</p>
+    </div>
+
+    <div class="page-content">
+      <div class="page-content">
+
+  <!-- ══════════ SECCIÓN: Fuente de Corriente ══════════ -->
+  <section>
+    <h2>Diseño de la Fuente de Corriente, Par diferencial y espejo de corriente</h2>
+
+    <p>La primera etapa implementada fue la fuente de corriente encargada de fijar la corriente del par diferencial. Esta se diseñó utilizando los transistores Q3 y Q4 (2N3904) en configuración de espejo de corriente.</p>
+    <p>El par diferencial está formado por los transistores Q1 y Q2 (2N3904).<p>
+  
+
+    
+  </section>
+
+  
+  <!-- ══════════ SECCIÓN: Espejo de Corriente ══════════ -->
+    <div class="hero-image">
+        <!-- ★ EDITAR: Reemplaza este texto con una etiqueta <img> cuando tengas la foto -->
+        <!-- Ejemplo para poner una imagen real:
+             <img src="fotos/circuito.jpg" alt="Foto del circuito" style="width:100%; border-radius:10px;">
+        -->
+            <img src="images/simulacion1.jpg" alt="Circuito OP-AMP" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);">
+    
+    </div>
+
+
+  <!-- ══════════ SECCIÓN: Punto de Operación (.op) ══════════ -->
+  <section>
+
+    <div class="highlight-section">
+      <h4>Verificación del Punto de Operación</h4>
+      <ul class="list-items">
+        <li>✓ Todos los transistores operan en región activa</li>
+        <li>✓ La corriente es estable</li>
+        <li>Q3 actúa como transistor de referencia </li>
+        <li>Q4 replica la corriente establecida por Q3</li>
+        <li>✓ El par diferencial presenta simetría</li>
+        <li>✓ El punto de operación es adecuado para continuar con la siguiente etapa</li>
+      </ul>
+    </div>
+  </section>
+
+</div>
+
+<!-- ══════════ SECCIÓN: Segunda Etapa de Ganancia ══════════ -->
+<!-- ══════════ SECCIÓN: Segunda Etapa de Ganancia ══════════ -->
+<section>
+  <h2>Diseño de la Etapa de Ganancia (Etapa con Degeneración)</h2>
+
+  <p>Después del par diferencial se implementó una segunda etapa encargada de aumentar la ganancia de voltaje del amplificador. Esta etapa está formada por el transistor Q5 (2N3906) en configuración de emisor común.</p>
+
+  <p>A diferencia del par diferencial, esta etapa incorpora degeneración de emisor mediante la resistencia R5.</p>
+
+ 
+
+  <p>La resistencia en el emisor reduce ligeramente la ganancia máxima, pero mejora la estabilidad térmica, la linealidad y el control del punto de operación.</p>
+</section>
+
+   <div class="hero-image">
+        <!-- ★ EDITAR: Reemplaza este texto con una etiqueta <img> cuando tengas la foto -->
+        <!-- Ejemplo para poner una imagen real:
+             <img src="fotos/circuito.jpg" alt="Foto del circuito" style="width:100%; border-radius:10px;">
+        -->
+          <img src="images/simulacion 2.jpg" alt="Circuito OP-AMP" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);">
+    
+   </div>
+<!-- ══════════ SECCIÓN: Punto de Operación Segunda Etapa ══════════ -->
+<section>
+
+  <div class="highlight-section">
+    <h4>Verificación del Punto de Operación</h4>
+    <ul class="list-items">
+      <li>✓ Q5 opera en región activa</li>
+      <li>✓ La degeneración estabiliza la corriente</li>
+      <li>✓ Se evita saturación del transistor</li>
+    </ul>
+  </div>
+
+
+
+</section>
+
+
+
+<!-- ══════════ SECCIÓN: Carga Activa y Segunda Etapa ══════════ -->
+<section>
+  <h2>Carga Activa y Segunda Etapa de Ganancia</h2>
+
+  <p>En esta versión del diseño se reemplazaron las resistencias de carga del par diferencial por un espejo de corriente activo formado por los transistores Q6 y Q7 (2N3906).</p>
+
+  <p>El uso de carga activa incrementa la resistencia equivalente en los colectores de Q1 y Q2, permitiendo un aumento significativo en la ganancia de voltaje del amplificador.</p>
+<div class="hero-image">
+        <!-- ★ EDITAR: Reemplaza este texto con una etiqueta <img> cuando tengas la foto -->
+        <!-- Ejemplo para poner una imagen real:
+             <img src="fotos/circuito.jpg" alt="Foto del circuito" style="width:100%; border-radius:10px;">
+        -->
+          <img src="images/simulacion3.jpg" alt="Circuito OP-AMP" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);">
+    
+   </div>
+  
+
+  <div class="highlight-section">
+    <h4>Resultado del Diseño</h4>
+    <ul class="list-items">
+      <li>✓ Aumento considerable de la ganancia total</li>
+      <li>✓ Operación en región activa</li>
+    </ul>
+  </div>
+</section>
+
+
+
+<!-- ══════════ SECCIÓN: Compensación ══════════ -->
+<section>
+  <h2>Compensación en Frecuencia</h2>
+
+  <p>Para garantizar la estabilidad del amplificador operacional se incorporó un capacitor de compensación (C1).</p>
+
+  <p>De esta forma se mejora la estabilidad del sistema sin afectar significativamente el funcionamiento de las etapas previamente diseñadas.</p>
+</section>
+
+<div class="hero-image">
+  <img src="images/simulacion4.jpg"
+       alt="Compensación del OP-AMP"
+       style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);">
+</div>
+
+<section>
+  <div class="highlight-section">
+    <h4>Resultado de la Compensación</h4>
+    <ul class="list-items">
+      <li>✓ Se mejora la estabilidad del circuito</li>
+      <li>✓ Se evita la aparición de oscilaciones</li>
+    </ul>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- FIN .page-content -->
+
+    <!-- ─── BOTONES DE NAVEGACIÓN ─── -->
+    <!-- ★ EDITAR: href y texto de cada botón -->
+    <div class="page-nav">
+      <a href="opamp.html"        class="nav-btn">← OP-AMP</a>
+      <a href="protoboard.html" class="nav-btn next">Protoboard →</a>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Proyecto OP-AMP | Electrónica 3</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
